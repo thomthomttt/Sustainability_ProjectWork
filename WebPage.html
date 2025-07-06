@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report di Sostenibilità - Porsche</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon-personale.svg">
+  <style>
+    :root {
+      --primary-color: #b90000;
+      --secondary-color: #000000;
+      --text-color: #333333;
+      --background-color: #ffffff;
+      --white: #ffffff;
+      --gray-light: #f6f6f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo-central {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: var(--gray-light);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-top: 20px;
+    }
+
+    .download {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .download:hover {
+      background-color: #8f0000;
+    }
+
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #1a1a1a;
+      color: var(--white);
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer img.logo-footer {
+      height: 40px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="porsche-logo.svg" alt="Logo Porsche" class="logo-central">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Chi siamo</a>
+      <a href="#">Report</a>
+      <a href="#">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Scarica il Report</h2>
+    <p>Consulta il documento ufficiale che descrive le iniziative ambientali, sociali e di governance di Porsche AG nel 2024.</p>
+    <a href="report-porsche-2024.pdf" class="download" download> Scarica il PDF</a>
+
+    <h2>Riepilogo</h2>
+    <p>Il report evidenzia l’impegno dell’azienda in ambiti come:</p>
+    <ul>
+      <li>Clima ed emissioni (27% delle auto vendute sono EV o ibride)</li>
+      <li>Investimenti in tecnologie eFuels e cattura CO₂</li>
+      <li>Economia circolare e riutilizzo risorse</li>
+      <li>Inclusione e responsabilità sociale</li>
+      <li>Governance trasparente e digitalizzazione</li>
+    </ul>
+  </main>
+
+  <footer>
+    <img src="porsche-logo.svg" alt="Logo Porsche" class="logo-footer">
+    <p>&copy; 2025 Porsche</p>
+  </footer>
+</body>
+</html>
