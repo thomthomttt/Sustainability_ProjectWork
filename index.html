@@ -91,6 +91,43 @@
       background: none;
     }
 
+    .hero-title-mobile {
+      display: none;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 12px;
+      text-align: center;
+      width: 100%;
+      z-index: 3;
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+    }
+
+    @media (max-width: 700px) {
+      .hero-title-mobile {
+        display: block;
+      }
+    }
+
+    /* Titolo per dispositivi mobili */
+    .hero-title-mobile {
+      display: none;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      padding: 0 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 4px;
+      z-index: 3;
+    }
+
     /* Header trasparente sopra la hero, con menu a destra */
     header {
       position: absolute;
@@ -272,12 +309,33 @@
     /* Responsive: ridimensiona hero, logo, header e main su schermi piccoli */
     @media (max-width: 700px) {
       .hero {
+        height: 180px;
+        /* più alta su mobile */
+        min-height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-logo {
+        height: 90px;
+        /* logo più grande su mobile */
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .hero {
         height: 110px;
       }
 
       .hero-logo {
         height: 54px;
         padding: 2px 4px;
+      }
+
+      .hero-title-mobile {
+        display: block;
       }
 
       header {
@@ -531,6 +589,7 @@
 <body>
   <div class="hero">
     <img src="porsche-logo.svg" alt="Logo Porsche" class="hero-logo">
+    <span class="hero-title-mobile">Sustainability Report Archive</span>
   </div>
   <header>
     <nav>
