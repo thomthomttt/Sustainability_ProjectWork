@@ -5,52 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Porsche - Sustainability Report Archive</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="porsche-logo-top.svg">
   <style>
-    /* Impostazioni base e palette colori */
     :root {
       --primary-color: #00bfff;
-      /* Azzurro acceso */
-      --secondary-color: #181818;
-      /* Nero/grigio scuro di fondo */
-      --text-color: #f3f3f3;
-      /* Testo chiaro */
       --background-color: #181818;
-      /* Sfondo pagina */
-      --white: #fff;
-      --gray-light: #232323;
+      --text-color: #f3f3f3;
       --footer-text: #bdbdbd;
-    }
-
-    * {
-      box-sizing: border-box;
-      /* Gestione box model moderna */
-      margin: 0;
-      padding: 0;
     }
 
     body {
       font-family: 'Roboto', Arial, sans-serif;
-      /* Font moderno */
       color: var(--text-color);
-      /* Colore testo principale */
-      line-height: 1.6;
-      /* Spaziatura testo */
-      min-height: 100vh;
-      /* Altezza minima viewport */
       background: var(--background-color);
-      /* Sfondo scuro */
+      margin: 0;
+      min-height: 100vh;
     }
 
-    /* Hero section con immagine di sfondo e overlay */
     .hero {
       position: relative;
       width: 100%;
-      height: 340px;
+      height: 260px;
       background: url('sfondo-porsche.jpg') center center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -58,339 +34,61 @@
       overflow: hidden;
     }
 
-    /* Sfumatura nera verso il basso per transizione morbida */
     .hero::before {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      height: 120px;
+      height: 100px;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #181818 100%);
-      z-index: 2;
-    }
-
-    /* Overlay trasparente per migliorare leggibilità */
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0.0) 100%);
       z-index: 1;
     }
 
-    /* Logo Porsche centrato nella hero */
     .hero-logo {
       position: relative;
       z-index: 2;
-      height: 150px;
+      height: 120px;
       filter: drop-shadow(0 2px 12px #000a) brightness(1.1);
-      /* Effetto glow */
-      border-radius: 8px;
-      padding: 10px 32px;
       background: none;
     }
 
     .hero-title-mobile {
       display: none;
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 12px;
-      text-align: center;
-      width: 100%;
-      z-index: 3;
-      position: absolute;
-      bottom: 18px;
-      left: 0;
     }
 
-    @media (max-width: 700px) {
-      .hero-title-mobile {
-        display: block;
-      }
-    }
-
-    /* Titolo per dispositivi mobili */
-    .hero-title-mobile {
-      display: none;
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--white);
-      text-align: center;
-      padding: 0 10px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 4px;
-      z-index: 3;
-    }
-
-    /* Header trasparente sopra la hero, con menu a destra */
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: transparent;
-      box-shadow: none;
-      padding: 0.5rem 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      border-bottom: none;
-      min-height: 70px;
-      z-index: 10;
-    }
-
-    /* Menu di navigazione con background scuro trasparente */
-    nav {
-      display: flex;
-      gap: 2.5rem;
-      background: rgba(24, 24, 24, 0.92);
-      padding: 0.5rem 1.5rem;
-      border-radius: 24px;
-    }
-
-    /* Stile link menu con animazione underline */
-    nav a {
-      text-decoration: none;
-      color: var(--white);
-      font-weight: 600;
-      font-size: 1.08rem;
-      letter-spacing: 0.5px;
-      position: relative;
-      padding: 4px 0;
-      transition: color 0.2s;
-    }
-
-    nav a::after {
-      content: "";
-      display: block;
-      width: 0%;
-      height: 2px;
-      background: var(--primary-color);
-      transition: width 0.35s cubic-bezier(.77, 0, .18, 1);
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      color: var(--primary-color);
-    }
-
-    nav a:hover::after,
-    nav a:focus::after {
-      width: 100%;
-    }
-
-    /* Card centrale con contenuto principale, effetto vetro scuro */
     main {
-      padding: 48px 28px 40px 28px;
       max-width: 900px;
-      margin: -80px auto 0 auto;
+      margin: -60px auto 0 auto;
       background: rgba(30, 30, 30, 0.93);
       border-radius: 8px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       border: 1px solid #232323;
-      backdrop-filter: blur(2px);
+      padding: 32px 18px 32px 18px;
       position: relative;
       z-index: 2;
     }
 
-    /* Titoli sezioni */
-    h2 {
-      color: var(--primary-color);
-      margin-top: 18px;
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* Pulsante download con animazione pulse */
-    .download {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 0;
-      background: transparent;
-      color: var(--primary-color);
-      border: 1.5px solid var(--primary-color);
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 1.02rem;
-      letter-spacing: 1px;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition:
-        background 0.18s,
-        color 0.18s,
-        border-color 0.18s,
-        box-shadow 0.18s;
-      box-shadow: none;
-      margin: 0;
-    }
-
-    .download:hover,
-    .download:focus {
-      background: var(--primary-color);
-      color: #fff;
-      border-color: #fff;
-      box-shadow: 0 2px 12px rgba(185, 0, 0, 0.13);
-      transform: translateY(-2px) scale(1.04);
-    }
-
-    /* Liste e testo */
-    ul {
-      margin-top: 15px;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 7px;
-      font-size: 1.04rem;
-    }
-
-    /* Footer scuro con logo e testo chiaro */
-    footer {
+    .intro {
+      margin-bottom: 28px;
       text-align: center;
-      padding: 36px 20px 24px 20px;
-      background-color: #111;
-      color: var(--footer-text);
-      font-size: 15px;
-      margin-top: 48px;
-      border-top: 2px solid #222;
     }
 
-    footer img.logo-footer {
-      height: 38px;
+    .intro h1 {
+      font-size: 2rem;
+      color: var(--primary-color);
       margin-bottom: 10px;
-      filter: brightness(1.1);
     }
 
-    /* Animazioni fade-in e slide-up per le principali sezioni */
-    .hero,
-    header,
-    main,
-    footer {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1.1s cubic-bezier(.77, 0, .18, 1) forwards;
+    .download-section {
+      margin-bottom: 28px;
     }
 
-    header {
-      animation-delay: 0.2s;
-    }
-
-    .hero {
-      animation-delay: 0s;
-    }
-
-    main {
-      animation-delay: 0.4s;
-    }
-
-    footer {
-      animation-delay: 0.7s;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    /* Responsive: ridimensiona hero, logo, header e main su schermi piccoli */
-    @media (max-width: 700px) {
-      .hero {
-        height: 180px;
-        /* più alta su mobile */
-        min-height: 140px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-logo {
-        height: 90px;
-        /* logo più grande su mobile */
-        padding: 0;
-        margin: 0 auto;
-        display: block;
-      }
-
-      .hero {
-        height: 110px;
-      }
-
-      .hero-logo {
-        height: 54px;
-        padding: 2px 4px;
-      }
-
-      .hero-title-mobile {
-        display: block;
-      }
-
-      header {
-        padding: 0.5rem 0.5rem;
-      }
-
-      nav {
-        gap: 0.7rem;
-        padding: 0.5rem 0.4rem;
-        font-size: 0.98rem;
-      }
-
-      main {
-        padding: 14px 2vw 14px 2vw;
-      }
-
-      .intro h1 {
-        font-size: 1.2rem;
-      }
-
-      .intro p {
-        font-size: 0.98rem;
-      }
-
-      .download-section h2,
-      .summary h2 {
-        font-size: 1.1rem;
-      }
-
-      .report-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .report-grid a.download {
-        height: 64px;
-        font-size: 1.08rem;
-      }
-
-      .report-thumb-bg {
-        min-height: 64px;
-      }
-
-      .report-year-label {
-        font-size: 1.05rem;
-        padding: 7px 0 5px 0;
-      }
-    }
-
-    /* Griglia per i report con layout responsive */
     .report-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px 32px;
-      margin: 28px 0 36px 0;
+      margin: 24px 0 0 0;
       padding: 0;
     }
 
@@ -403,131 +101,48 @@
       padding: 0 12px 0 0;
       min-height: 80px;
       position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.1s cubic-bezier(.77, 0, .18, 1) forwards;
     }
 
-    .report-item .download {
-      flex-shrink: 0;
-      width: 80px;
-      height: 80px;
-      margin-right: 0;
+    .hero {
+      animation-delay: 0s;
     }
 
-    .report-desc {
-      color: #bdbdbd;
-      font-size: 1.04rem;
-      font-weight: 400;
-      letter-spacing: 0.2px;
-      line-height: 1.3;
+    main {
+      animation-delay: 0.2s;
     }
 
-    @media (max-width: 700px) {
-      .report-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
+    .report-item {
+      animation-delay: 0.3s;
+    }
 
-      .report-item {
-        flex-direction: row;
-        padding: 0 6px 0 0;
-      }
+    footer {
+      animation-delay: 0.4s;
+    }
 
-      .report-desc {
-        font-size: 0.98rem;
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: none;
       }
     }
 
-    .report-grid a {
-      display: block;
-      padding: 12px 0;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--white);
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .report-grid a:hover,
-    .report-grid a:focus {
-      background: #00bfff;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Stili per le sezioni introduttive e di riepilogo */
-    .intro {
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .intro h1 {
-      font-size: 2.1rem;
-      color: var(--primary-color);
-      margin-bottom: 12px;
-    }
-
-    .download-section {
-      margin-bottom: 36px;
-    }
-
-    .summary ul {
-      margin-top: 18px;
-    }
-
-    .report-thumb {
-      width: 32px;
-      height: 32px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-right: 10px;
-      vertical-align: middle;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-      background: #fff;
-    }
-
-    .report-thumb:hover {
-      transform: scale(1.05);
-    }
-
-    .report-thumb-bg {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-      vertical-align: middle;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.2s;
-    }
-
-    .report-year-label {
-      display: inline-block;
-      vertical-align: middle;
-      line-height: 40px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--white);
-    }
-
-    .report-grid a:hover .report-thumb-bg {
-      transform: scale(1.1);
-    }
-
-    .report-grid a.download {
+    .download {
       position: relative;
       display: block;
+      width: 80px;
       height: 80px;
-      padding: 0;
-      background: none;
-      color: #fff;
-      text-decoration: none;
       border-radius: 6px;
-      font-weight: 600;
       overflow: hidden;
-      transition: transform 0.15s, box-shadow 0.18s;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      background: none;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+      transition: transform 0.15s, box-shadow 0.18s;
+      flex-shrink: 0;
     }
 
     .report-thumb-bg {
@@ -543,8 +158,8 @@
       z-index: 1;
     }
 
-    .report-grid a.download:hover .report-thumb-bg,
-    .report-grid a.download:focus .report-thumb-bg {
+    .download:hover .report-thumb-bg,
+    .download:focus .report-thumb-bg {
       filter: brightness(1) blur(1px);
     }
 
@@ -555,7 +170,7 @@
       bottom: 0;
       background: rgba(0, 0, 0, 0.55);
       color: #fff;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       padding: 10px 0 7px 0;
       text-align: center;
       letter-spacing: 1px;
@@ -564,24 +179,168 @@
       transition: background 0.2s;
     }
 
-    .report-grid a.download:hover .report-year-label,
-    .report-grid a.download:focus .report-year-label {
-      background: rgba(0, 191, 255, 0.85);
+    .download:hover .report-year-label,
+    .download:focus .report-year-label {
+      background: var(--primary-color);
       color: #181818;
-    }
-
-    .report-item {
-      text-align: center;
-      color: var(--white);
-      font-size: 0.9rem;
-      margin-bottom: 16px;
+      box-shadow: 0 0 8px 2px rgba(0, 191, 255, 0.18);
     }
 
     .report-desc {
-      display: block;
-      margin-top: 8px;
       color: var(--footer-text);
-      font-size: 0.85rem;
+      font-size: 0.98rem;
+      margin-left: 8px;
+      transition: color 0.2s;
+    }
+
+    .report-item:hover .report-desc,
+    .report-item:focus-within .report-desc {
+      color: var(--primary-color);
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        height: 180px;
+        min-height: 140px;
+      }
+
+      .hero-logo {
+        height: 80px;
+      }
+
+      main {
+        padding: 14px 2vw 14px 2vw;
+      }
+
+      .intro h1 {
+        font-size: 1.2rem;
+      }
+
+      .report-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .download {
+        width: 64px;
+        height: 64px;
+      }
+
+      .report-desc {
+        font-size: 0.93rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 18px 20px;
+      background-color: #111;
+      color: var(--footer-text);
+      font-size: 15px;
+      margin-top: 48px;
+      border-top: 2px solid #222;
+    }
+
+    .logo-footer {
+      height: 32px;
+      margin-bottom: 10px;
+      filter: brightness(1.1);
+    }
+
+    /* Animazioni fade-in */
+    .hero,
+    main,
+    .report-item,
+    footer {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.1s cubic-bezier(.77, 0, .18, 1) forwards;
+    }
+
+    .hero {
+      animation-delay: 0s;
+    }
+
+    main {
+      animation-delay: 0.2s;
+    }
+
+    .report-item {
+      animation-delay: 0.3s;
+    }
+
+    footer {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Effetto morbido su hover report */
+    .report-item {
+      transition: box-shadow 0.22s cubic-bezier(.77, 0, .18, 1), transform 0.22s cubic-bezier(.77, 0, .18, 1);
+    }
+
+    .report-item:hover,
+    .report-item:focus-within {
+      box-shadow: 0 4px 18px rgba(0, 191, 255, 0.13), 0 2px 8px rgba(0, 0, 0, 0.10);
+      transform: translateY(-2px) scale(1.015);
+    }
+
+    /* Glow e underline animato sul download */
+    .download {
+      position: relative;
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+
+    .download::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 20%;
+      right: 20%;
+      bottom: 6px;
+      height: 2.5px;
+      background: var(--primary-color);
+      border-radius: 2px;
+      opacity: 0;
+      transform: scaleX(0.5);
+      transition: opacity 0.18s, transform 0.22s cubic-bezier(.77, 0, .18, 1);
+      z-index: 3;
+    }
+
+    .download:hover::after,
+    .download:focus::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .download:hover,
+    .download:focus {
+      box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.10);
+      z-index: 2;
+    }
+
+    /* Glow su year label */
+    .download:hover .report-year-label,
+    .download:focus .report-year-label {
+      background: var(--primary-color);
+      color: #181818;
+      box-shadow: 0 0 8px 2px rgba(0, 191, 255, 0.18);
+    }
+
+    /* Transizione colore descrizione */
+    .report-desc {
+      transition: color 0.2s;
+    }
+
+    .report-item:hover .report-desc,
+    .report-item:focus-within .report-desc {
+      color: var(--primary-color);
     }
   </style>
 </head>
@@ -589,32 +348,16 @@
 <body>
   <div class="hero">
     <img src="porsche-logo.svg" alt="Logo Porsche" class="hero-logo">
-    <span class="hero-title-mobile">Sustainability Report Archive</span>
   </div>
-  <header>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Chi siamo</a>
-      <a href="#">Report</a>
-      <a href="#">Contatti</a>
-    </nav>
-  </header>
-
   <main>
     <section class="intro">
       <h1>Porsche Sustainability Report Archive</h1>
       <p>
         Here you can find the annual sustainability reports of Porsche, detailing our commitment to environmental
         responsibility, social equity, and economic sustainability.
-        Each report provides insights into our strategies, achievements, and future goals in these critical areas.
       </p>
     </section>
-
     <section class="download-section">
-      <h2>Sustainability report download</h2>
-      <p>
-        Click on the links below to download the latest sustainability reports:
-      </p>
       <div class="report-grid">
         <div class="report-item">
           <a href="Report_PDF/2013.pdf" class="download" download>
@@ -702,19 +445,7 @@
         </div>
       </div>
     </section>
-
-    <section class="summary">
-      <h2>
-        Keys to Sustainability:
-      </h2>
-      <ul>
-        <li>
-
-        </li>
-      </ul>
-    </section>
   </main>
-
   <footer>
     <img src="porsche-logo.svg" alt="Logo Porsche" class="logo-footer">
     <p>&copy; 2025 Porsche</p>
