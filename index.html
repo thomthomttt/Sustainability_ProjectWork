@@ -34,7 +34,7 @@
     }
 
     body {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       /* Font moderno */
       color: var(--text-color);
       /* Colore testo principale */
@@ -467,51 +467,51 @@
         Click on the links below to download the latest sustainability reports:
       </p>
       <div class="report-grid">
-        <a href="Report_PDF/2024.pdf" class="download" download data-pdf="Report_PDF/2024.pdf">
+        <a href="Report_PDF/2024.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2024-thumb.jpg');"></span>
           <span class="report-year-label">2024</span>
         </a>
-        <a href="Report_PDF/2023.pdf" class="download" download data-pdf="Report_PDF/2023.pdf">
+        <a href="Report_PDF/2023.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2023-thumb.jpg');"></span>
           <span class="report-year-label">2023</span>
         </a>
-        <a href="Report_PDF/2022.pdf" class="download" download data-pdf="Report_PDF/2022.pdf">
+        <a href="Report_PDF/2022.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2022-thumb.jpg');"></span>
           <span class="report-year-label">2022</span>
         </a>
-        <a href="Report_PDF/2021.pdf" class="download" download data-pdf="Report_PDF/2021.pdf">
+        <a href="Report_PDF/2021.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2021-thumb.jpg');"></span>
           <span class="report-year-label">2021</span>
         </a>
-        <a href="Report_PDF/2020.pdf" class="download" download data-pdf="Report_PDF/2020.pdf">
+        <a href="Report_PDF/2020.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2020-thumb.jpg');"></span>
           <span class="report-year-label">2020</span>
         </a>
-        <a href="Report_PDF/2019.pdf" class="download" download data-pdf="Report_PDF/2019.pdf">
+        <a href="Report_PDF/2019.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2019-thumb.jpg');"></span>
           <span class="report-year-label">2019</span>
         </a>
-        <a href="Report_PDF/2018.pdf" class="download" download data-pdf="Report_PDF/2018.pdf">
+        <a href="Report_PDF/2018.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2018-thumb.jpg');"></span>
           <span class="report-year-label">2018</span>
         </a>
-        <a href="Report_PDF/2017.pdf" class="download" download data-pdf="Report_PDF/2017.pdf">
+        <a href="Report_PDF/2017.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2017-thumb.jpg');"></span>
           <span class="report-year-label">2017</span>
         </a>
-        <a href="Report_PDF/2016.pdf" class="download" download data-pdf="Report_PDF/2016.pdf">
+        <a href="Report_PDF/2016.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2016-thumb.jpg');"></span>
           <span class="report-year-label">2016</span>
         </a>
-        <a href="Report_PDF/2015.pdf" class="download" download data-pdf="Report_PDF/2015.pdf">
+        <a href="Report_PDF/2015.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2015-thumb.jpg');"></span>
           <span class="report-year-label">2015</span>
         </a>
-        <a href="Report_PDF/2014.pdf" class="download" download data-pdf="Report_PDF/2014.pdf">
+        <a href="Report_PDF/2014.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2014-thumb.jpg');"></span>
           <span class="report-year-label">2014</span>
         </a>
-        <a href="Report_PDF/2013.pdf" class="download" download data-pdf="Report_PDF/2013.pdf">
+        <a href="Report_PDF/2013.pdf" class="download" download>
           <span class="report-thumb-bg" style="background-image:url('img/2013-thumb.jpg');"></span>
           <span class="report-year-label">2013</span>
         </a>
@@ -534,36 +534,6 @@
     <img src="porsche-logo.svg" alt="Logo Porsche" class="logo-footer">
     <p>&copy; 2025 Porsche</p>
   </footer>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Configura PDF.js
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.js";
-
-  // Trova tutti i pulsanti con data-pdf
-  document.querySelectorAll('.report-grid a.download').forEach(function (el) {
-    const pdfUrl = el.getAttribute('data-pdf');
-    const thumbBg = el.querySelector('.report-thumb-bg');
-
-    // Carica il PDF e genera la preview
-    pdfjsLib.getDocument(pdfUrl).promise.then(function (pdf) {
-      return pdf.getPage(1);
-    }).then(function (page) {
-      const viewport = page.getViewport({ scale: 0.25 });
-      const canvas = document.createElement('canvas');
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
-      const context = canvas.getContext('2d');
-      return page.render({ canvasContext: context, viewport: viewport }).promise.then(function () {
-        // Imposta la preview come background
-        thumbBg.style.backgroundImage = `url(${canvas.toDataURL()})`;
-      });
-    }).catch(function (err) {
-      // In caso di errore, fallback su un colore o immagine di default
-      thumbBg.style.background = "#222";
-    });
-  });
-});
-</script>
 </body>
 
 </html>
