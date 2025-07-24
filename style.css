@@ -48,11 +48,6 @@ body {
     background: none;
 }
 
-/* Titolo mobile nascosto (per accessibilità) */
-.hero-title-mobile {
-    display: none;
-}
-
 /* Stile del main */
 main {
     max-width: 900px;
